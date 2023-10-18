@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
-  "io"
 	"time"
 )
 
 func main() {
-	url := "http://94.237.59.185:43871/question1/"
+	url := "http://ip/question1/"
 	maxRequests := 1000
 	waitTime := 0
 
@@ -20,7 +20,7 @@ func main() {
 			break
 		}
 
-    body, _ := io.ReadAll(resp.Body)
+		body, _ := io.ReadAll(resp.Body)
 		fmt.Println("Status code:", resp.StatusCode)
 		fmt.Println("Response Body:", string(body))
 

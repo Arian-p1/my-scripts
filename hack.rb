@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 
 # define target url, change as needed
-url = URI("94.237.62.195:53749/question1/")
+url = URI("ip/question1/")
 
 # define a fake headers to present ourself as Chromium browser, change if needed
 headers = {

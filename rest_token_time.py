@@ -3,7 +3,7 @@ import requests
 from sys import exit
 from time import time
 
-url = "http://94.237.56.76:54769/question1"
+url = "http://ip/question1"
 
 # to have a wide window try to bruteforce starting from 120seconds ago
 now        = int(time())

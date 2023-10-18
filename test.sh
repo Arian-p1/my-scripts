@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL of the web application
-url="http://94.237.59.185:43871/question1/"
+url="http://ip/question1/"
 
 # Maximum number of requests before rate limiting is expected
 max_requests=100

